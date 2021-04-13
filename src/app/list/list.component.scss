@@ -1,0 +1,43 @@
+table { 
+    width: 100%;
+    position: relative;
+}
+
+button {
+    color: #ffffff !important;
+    margin-right: 20px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.button-container {
+    text-align: center;
+    width: 17%;
+}
+
+.more-btn {
+    background-color: rgb(106, 238, 17);
+}
+
+.edit-btn {
+    background-color: rgb(30, 108, 211);
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+
+.add-new-owner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    right: 20px;
+    bottom: -25%;
+    .add-new-btn {
+        background-color: rgb(106, 238, 17);
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="owner-info">
+        <h2>info</h2>
+        <form [formGroup]="form" (ngSubmit)="save()">
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="first-name">First name</mat-label>
+                <input matInput formControlName="firstName" id="first-name" placeholder="Owner name"
+                    autocomplete="firstName">
+                <mat-error class="error" id="requiredEmailError"
+                    *ngIf="form.controls['firstName'].hasError('required')">
+                    First name field required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="last-name">Last name</mat-label>
+                <input matInput formControlName="lastName" id="last-name" placeholder="Owner name"
+                    autocomplete="lastName">
+                <mat-error class="error" id="requiredEmailError" *ngIf="form.controls['lastName'].hasError('required')">
+                    Last name field required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="middle-name">Middle name</mat-label>
+                <input matInput formControlName="middleName" id="middle-name" placeholder="Owner name"
+                    autocomplete="middleName">
+                <mat-error class="error" id="requiredEmailError"
+                    *ngIf="form.controls['middleName'].hasError('required')">
+                    Middle name field required
+                </mat-error>
+            </mat-form-field>
+            <h2>Automobiles</h2>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="car-number">Car number</mat-label>
+                <input matInput formControlName="carNumber" id="car-number" placeholder="Owner name"
+                    autocomplete="carNumber">
+                <mat-error class="error" id="requiredEmailError"
+                    *ngIf="form.controls['carNumber'].hasError('required')">
+                    Car number field required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="car-name">Car name</mat-label>
+                <input matInput formControlName="carName" id="car-name" placeholder="Owner name" autocomplete="carName">
+                <mat-error class="error" id="requiredEmailError" *ngIf="form.controls['carName'].hasError('required')">
+                    Car name field required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="car-model">Car Model</mat-label>
+                <input matInput formControlName="carModel" id="car-model" placeholder="Owner name"
+                    autocomplete="carModel">
+                <mat-error class="error" id="requiredEmailError" *ngIf="form.controls['carModel'].hasError('required')">
+                    Car Model field required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-input">
+                <mat-label for="car-year">Car Year</mat-label>
+                <input matInput formControlName="carYear" id="car-year" placeholder="Owner name" autocomplete="carYear">
+                <mat-error class="error" id="requiredEmailError" *ngIf="form.controls['carYear'].hasError('required')">
+                    Car Year field required
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button type="submit" color="primary"
+                [disabled]="form.invalid || submitted">Обновить</button>
+        </form>
+
+    </div>
+</div>

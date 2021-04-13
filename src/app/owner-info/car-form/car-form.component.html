@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="owner-info" *ngIf="owner">
+        <h2>Automobiles</h2>
+        <form [formGroup]="carForm" (ngSubmit)="save()" *ngFor="let car of owner.cars">
+
+            <div>
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label for="car-number">Car number</mat-label>
+                    <input matInput formControlName="carNumber" id="car-number" placeholder="Owner name"
+                        autocomplete="carNumber">
+                    <mat-error class="error" id="requiredEmailError"
+                        *ngIf="carForm.controls['carNumber'].hasError('required')">
+                        Car number field required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label for="car-name">Car name</mat-label>
+                    <input matInput formControlName="carName" id="car-name" placeholder="Owner name"
+                        autocomplete="carName">
+                    <mat-error class="error" id="requiredEmailError"
+                        *ngIf="carForm.controls['carName'].hasError('required')">
+                        Car name field required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label for="car-model">Car Model</mat-label>
+                    <input matInput formControlName="carModel" id="car-model" placeholder="Owner name"
+                        autocomplete="carModel">
+                    <mat-error class="error" id="requiredEmailError"
+                        *ngIf="carForm.controls['carModel'].hasError('required')">
+                        Car model field required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="custom-input">
+                    <mat-label for="car-year">Car year</mat-label>
+                    <input matInput formControlName="carYear" id="car-year" placeholder="Car year"
+                        autocomplete="carYear">
+                    <mat-error class="error" id="requiredEmailError"
+                        *ngIf="carForm.controls['carYear'].hasError('required')">
+                        Car year field required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button type="submit" color="primary"
+                [disabled]="carForm.invalid || submitted">Обновить</button>
+        </form>
+
+    </div>
+</div>
